@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TimeSheetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view('pages.forms');
+});
+
+Route::get('/apps', function () {
+    return view('layouts.apps');
+});
+
+// First Page
+Route::get('/first-page', [TimeSheetController::class, 'firstPage'])->name('first-page');
+
+// Second Page
+Route::get('/second-page', [TimeSheetController::class, 'secondPage'])->name('second-page');
+
+
+
+
