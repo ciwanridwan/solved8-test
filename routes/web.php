@@ -32,6 +32,15 @@ Route::get('/first-page', [TimeSheetController::class, 'firstPage'])->name('firs
 // Second Page
 Route::get('/second-page', [TimeSheetController::class, 'secondPage'])->name('second-page');
 
+// View form
+Route::get('/form', [TimeSheetController::class, 'create'])->name('form');
+
+// Store form
+Route::post('/store-form', [TimeSheetController::class, 'store'])->name('store-form');
+
+Route::get('/edit/{id}', [TimeSheetController::class, 'edit'])->name('edit');
+
+Route::post('/update/{id}', [TimeSheetController::class, 'update'])->name('update');
 
 
 

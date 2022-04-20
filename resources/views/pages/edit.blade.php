@@ -14,16 +14,25 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="POST" action="{{route('store-form')}}">
+                    <form method="POST" action="{{route('update', $timeSheet->id)}}">
                         @csrf
+                        @method('POST')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="jam">Jam</label>
-                                <input type="text" class="form-control" id="jam" placeholder="Input Jam" name="jam">
+                                @if ($timeSheet->jam == 'null')
+                                <input type="text" class="form-control" id="jam" placeholder="Input Jam" name="jam">    
+                                @else
+                                <input type="text" class="form-control" id="jam"  name="jam" value="{{$timeSheet->jam}}">    
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
-                                <input type="text" class="form-control" id="deskripsi" placeholder="Input Deskripsi" name="deskripsi">
+                                @if ($timeSheet->deskripsi == 'null')
+                                <input type="text" class="form-control" id="deskripsi" placeholder="Input Deskripsi" name="deskripsi">    
+                                @else
+                                <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="{{$timeSheet->deskripsi}}">
+                                @endif
                             </div>
                         </div>
                         <!-- /.card-body -->
