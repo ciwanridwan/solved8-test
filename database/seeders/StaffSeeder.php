@@ -19,6 +19,7 @@ class StaffSeeder extends Seeder
             [
                 'nama' => 'Ridwan Andalus',
                 'level' => 'Junior',
+                'id_number' => 'LSP-123344',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -26,6 +27,7 @@ class StaffSeeder extends Seeder
             [
                 'nama' => 'Abar Solihat',
                 'level' => 'Middle',
+                'id_number' => 'LSP-123345',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]

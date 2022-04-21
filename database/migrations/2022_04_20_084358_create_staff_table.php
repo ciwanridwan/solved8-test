@@ -17,6 +17,7 @@ class CreateStaffTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('level');
+            $table->string('id_number');
             $table->timestamps();
         });
     }

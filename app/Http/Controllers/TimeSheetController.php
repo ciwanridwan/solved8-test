@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MonthlyActivity;
 use App\Models\Staff;
 use App\Models\TimeSheet;
 use Illuminate\Http\Request;
@@ -52,6 +53,11 @@ class TimeSheetController extends Controller
 
     public function secondPage()
     {
-        return view('pages.second');
+        // Data Staff
+        $staff = Staff::where('id', 1)->get();
+        
+        // passing data from table Monthly Activity
+        $monthlyActivities = MonthlyActivity::all(); 
+        return view('pages.second')->with('staff', $staff)->with('monthlyActivities', $monthlyActivities);
     }
 }
